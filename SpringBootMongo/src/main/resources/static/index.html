@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Students CRUD (Mongo)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Students</h1>
+
+  <section class="card">
+    <h2>Create / Update</h2>
+    <form id="studentForm">
+      <input type="hidden" id="id" />
+      <label>
+        Name
+        <input type="text" id="name" placeholder="e.g., Raju Sharma" required />
+      </label>
+      <label>
+        Email
+        <input type="email" id="email" placeholder="e.g., raju@example.com" required />
+      </label>
+      <div class="row">
+        <button type="submit" id="saveBtn">Save</button>
+        <button type="button" id="resetBtn" class="secondary">Reset</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="card">
+    <h2>All Students</h2>
+    <div class="row">
+      <input type="search" id="searchBox" placeholder="Filter by name/email…" />
+      <button id="refreshBtn" class="secondary">Refresh</button>
+    </div>
+    <table id="studentsTable">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody><!-- rows injected by JS --></tbody>
+    </table>
+  </section>
+
+  <template id="rowTemplate">
+    <tr>
+      <td class="idx"></td>
+      <td class="sid"></td>
+      <td class="sname"></td>
+      <td class="semail"></td>
+      <td class="actions">
+        <button class="edit">Edit</button>
+        <button class="delete danger">Delete</button>
+      </td>
+    </tr>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
